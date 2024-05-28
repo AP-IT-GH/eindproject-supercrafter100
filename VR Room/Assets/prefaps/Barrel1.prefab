@@ -1,0 +1,114 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1120108007822149538
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5810690157817640916}
+  - component: {fileID: 5812390126311828966}
+  - component: {fileID: 800521609849055753}
+  - component: {fileID: 3509698563619659026}
+  m_Layer: 0
+  m_Name: Barrel1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5810690157817640916
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120108007822149538}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.121894576, y: -0, z: -0, w: 0.99254304}
+  m_LocalPosition: {x: 616.09204, y: 28.302404, z: 662.7907}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: -14.003, y: 0, z: 0}
+--- !u!33 &5812390126311828966
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120108007822149538}
+  m_Mesh: {fileID: -5445648637363406282, guid: 63777833457f62640917425e7774de41, type: 3}
+--- !u!23 &800521609849055753
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120108007822149538}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 9db0ad2cc546daa4e8f049c80b9f246c, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3509698563619659026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120108007822149538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 698390b2a1eb9334990d65c18eada6a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fruitPrefabs:
+  - {fileID: 8292600945184373571, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
+  - {fileID: 185865645826707467, guid: 0a05d6a1fad5b924ab7c42aaa4dae685, type: 3}
+  - {fileID: 4057686577477812986, guid: 0605e3143077e3649860b77be103454d, type: 3}
+  - {fileID: 3482485554154014942, guid: af1ce4fbc26751a489d0b98b394a0914, type: 3}
+  - {fileID: 5212125591609093581, guid: d972dd5a3ae8cb143ac578025f46bf3a, type: 3}
+  launchPoint: {fileID: 0}
+  launchForce: 25
+  minFallSpeed: 2
+  maxFallSpeed: 5
+  minLaunchInterval: 1
+  maxLaunchInterval: 3
+  minLaunchAngle: 30
+  maxLaunchAngle: 60
+  minUpwardForce: 20
+  maxUpwardForce: 25
