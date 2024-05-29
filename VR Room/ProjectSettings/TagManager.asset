@@ -8,6 +8,9 @@ TagManager:
   - Box
   - Terrain
   - Fence
+  - shiny_pinapple
+  - shiny_apple
+  - shiny_orange
   layers:
   - Default
   - TransparentFX

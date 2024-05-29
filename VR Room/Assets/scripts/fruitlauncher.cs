@@ -6,6 +6,7 @@ using UnityEngine;
 public class fruitlauncher : MonoBehaviour
 {
     public GameObject[] fruitPrefabs;
+    public GameObject[] shinyFruit;
     public Transform launchPoint;
     public float launchForce = 10f;
     public float minFallSpeed = 2f;
@@ -16,6 +17,7 @@ public class fruitlauncher : MonoBehaviour
     public float maxLaunchAngle = 60f;
     public float minUpwardForce = 15f;
     public float maxUpwardForce = 25f;
+    public float shinyFruitProbability = 0.2f; // Probability of launching shiny fruit
 
     void Start()
     {
@@ -33,16 +35,27 @@ public class fruitlauncher : MonoBehaviour
 
     public void LaunchFruit()
     {
-        GameObject randomFruitPrefab = fruitPrefabs[UnityEngine.Random.Range(0, fruitPrefabs.Length)];
-        GameObject fruitInstance = Instantiate(randomFruitPrefab, launchPoint.position, Quaternion.identity);
+        GameObject fruitPrefab;
+
+        // Determine whether to launch a shiny fruit or a regular fruit based on probability
+        if (UnityEngine.Random.value < shinyFruitProbability)
+        {
+            fruitPrefab = shinyFruit[UnityEngine.Random.Range(0, shinyFruit.Length)];
+        }
+        else
+        {
+            fruitPrefab = fruitPrefabs[UnityEngine.Random.Range(0, fruitPrefabs.Length)];
+        }
+
+        GameObject fruitInstance = Instantiate(fruitPrefab, launchPoint.position, Quaternion.identity);
 
         float launchAngle = UnityEngine.Random.Range(minLaunchAngle, maxLaunchAngle);
         float upwardForce = UnityEngine.Random.Range(minUpwardForce, maxUpwardForce);
 
-        // Bereken de initiële lanceerrichting van het fruit met de hoek
+        // Calculate the initial launch direction of the fruit with the angle
         Vector3 launchDirection = Quaternion.Euler(0f, launchAngle, 0f) * launchPoint.forward;
 
-        // Verminder de schuinte van de lanceerrichting
+        // Reduce the inclination of the launch direction
         launchDirection = Vector3.Lerp(launchDirection.normalized, Vector3.up, 0.8f);
 
         Rigidbody fruitRigidbody = fruitInstance.GetComponent<Rigidbody>();
