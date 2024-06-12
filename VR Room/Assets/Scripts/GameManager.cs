@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour {
         this.selectedSpeed = this.defaultSpeed;
         this.UpdateButtonSelectionState();
         
-        this.enteringFence.GetComponent<Animator>().SetBool("isOpen", this.isGameActive);
+        this.enteringFence.GetComponent<Animator>().SetBool("isOpen", !this.isGameActive);
     }
 
     // Update is called once per frame
