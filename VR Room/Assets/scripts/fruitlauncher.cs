@@ -48,7 +48,8 @@ public class fruitlauncher : MonoBehaviour
         }
 
         GameObject fruitInstance = Instantiate(fruitPrefab, launchPoint.position, Quaternion.identity);
-
+        fruitInstance.layer = LayerMask.NameToLayer("Fruit"); // Set layer for 
+        
         float launchAngle = UnityEngine.Random.Range(minLaunchAngle, maxLaunchAngle);
         float upwardForce = UnityEngine.Random.Range(minUpwardForce, maxUpwardForce);
 

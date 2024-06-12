@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour {
     // Game object references
     public GameObject enteringFence;
+    public TMP_Text scoreText;
     
     // Settings
     public List<GameObject> difficultyButtons = new();
@@ -22,6 +23,9 @@ public class GameManager : MonoBehaviour {
     public Speed selectedSpeed;
     public bool isGameActive = false;
     
+    // Game values
+    public int lives = 3;
+    public int score = 0;
     
     // Start is called before the first frame update
     void Start()
@@ -43,6 +47,17 @@ public class GameManager : MonoBehaviour {
     {
         this.isGameActive = true;
         this.enteringFence.GetComponent<Animator>().SetBool("isOpen", !this.isGameActive);
+        this.lives = 3;
+    }
+
+    public void CatchFruit(CatchType type)
+    {
+        if (type == CatchType.NORMAL || type == CatchType.SHINY)
+        {
+            this.score++;
+        }
+        
+        this.UpdateScoreboard();
     }
 
     public void UpdateDifficulty(String inputDifficulty)
@@ -88,5 +103,10 @@ public class GameManager : MonoBehaviour {
             else
                 img.color = Color.white;
         }
+    }
+
+    void UpdateScoreboard()
+    {
+        this.scoreText.text = score.ToString();
     }
 }
