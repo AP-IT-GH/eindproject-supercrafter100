@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour {
     // Game object references
     public GameObject enteringFence;
     public TMP_Text scoreText;
+    public List<GameObject> spawningBarrels = new();
     
     // Settings
     public List<GameObject> difficultyButtons = new();
@@ -26,6 +27,7 @@ public class GameManager : MonoBehaviour {
     // Game values
     public int lives = 3;
     public int score = 0;
+    
     
     // Start is called before the first frame update
     void Start()
@@ -48,6 +50,12 @@ public class GameManager : MonoBehaviour {
         this.isGameActive = true;
         this.enteringFence.GetComponent<Animator>().SetBool("isOpen", !this.isGameActive);
         this.lives = 3;
+        this.score = 0;
+
+        foreach (GameObject spawningBarrel in spawningBarrels)
+        {
+            spawningBarrel.GetComponent<fruitlauncher>().StartLaunching();
+        }
     }
 
     public void CatchFruit(CatchType type)

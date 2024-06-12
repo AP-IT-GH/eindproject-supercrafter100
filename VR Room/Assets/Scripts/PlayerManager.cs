@@ -16,13 +16,14 @@ public class PlayerManager : MonoBehaviour
             if (ts.Seconds >= 3)
             {
                 GameManager.StartGame();
+                isPendingStart = false;
             }
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Area")
+        if (other.tag == "Area" && !GameManager.isGameActive)
         {
             // Start countdown
             entryTime = DateTime.Now;
