@@ -39,6 +39,12 @@ public class GameManager : MonoBehaviour {
         
     }
 
+    public void StartGame()
+    {
+        this.isGameActive = true;
+        this.enteringFence.GetComponent<Animator>().SetBool("isOpen", !this.isGameActive);
+    }
+
     public void UpdateDifficulty(String inputDifficulty)
     {
         Enum.TryParse(inputDifficulty.ToUpper(), out Difficulty difficulty);

@@ -1218,6 +1218,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3008297296414033687, guid: cb422acdc199d6e42910f589b81c283b,
         type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: cb422acdc199d6e42910f589b81c283b,
+        type: 3}
       propertyPath: m_TagString
       value: Fence
       objectReference: {fileID: 0}
@@ -1337,7 +1342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63fd72357d0b80549a2b4ee0f5468ed1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enteringFence: {fileID: 0}
+  enteringFence: {fileID: 1814349464}
   difficultyButtons:
   - {fileID: 1696017713}
   - {fileID: 1042597677}
@@ -4250,6 +4255,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3008297296414033687, guid: cb422acdc199d6e42910f589b81c283b,
         type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: cb422acdc199d6e42910f589b81c283b,
+        type: 3}
       propertyPath: m_TagString
       value: Fence
       objectReference: {fileID: 0}
@@ -4840,6 +4850,59 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 981436914}
   m_CullTransparentMesh: 1
+--- !u!1 &982445764
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 982445765}
+  - component: {fileID: 982445766}
+  m_Layer: 0
+  m_Name: FieldEntryTrigger
+  m_TagString: Area
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &982445765
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982445764}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 612.07, y: 29.36, z: 652.86}
+  m_LocalScale: {x: 13, y: 8, z: 12.6}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1579115611}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &982445766
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982445764}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &982525533
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7304,6 +7367,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3008297296414033687, guid: cb422acdc199d6e42910f589b81c283b,
         type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: cb422acdc199d6e42910f589b81c283b,
+        type: 3}
       propertyPath: m_TagString
       value: Fence
       objectReference: {fileID: 0}
@@ -7440,6 +7508,7 @@ GameObject:
   - component: {fileID: 1570080387}
   - component: {fileID: 1570080388}
   - component: {fileID: 1570080391}
+  - component: {fileID: 1570080392}
   m_Layer: 0
   m_Name: XR Rig
   m_TagString: Untagged
@@ -7596,7 +7665,7 @@ CharacterController:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
@@ -7609,6 +7678,20 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1570080392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570080384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7ca74c6a6eefc748bd50297dab7a35d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameManager: {fileID: 338039930}
+  isPendingStart: 0
 --- !u!4 &1576906023 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5473569773201559785, guid: fd8e0760db14a534a89257f68a4f2a8c,
@@ -7672,6 +7755,7 @@ Transform:
   - {fileID: 440328898}
   - {fileID: 1354701480}
   - {fileID: 1876679551}
+  - {fileID: 982445765}
   m_Father: {fileID: 1504828809}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1595052775 stripped
@@ -8093,6 +8177,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fence_01 (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3008297296414033687, guid: cb422acdc199d6e42910f589b81c283b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3008297296414033687, guid: cb422acdc199d6e42910f589b81c283b,
         type: 3}
