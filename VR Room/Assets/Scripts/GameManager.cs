@@ -26,7 +26,11 @@ public class GameManager : MonoBehaviour {
     
     // Game values
     public int lives = 3;
+    public List<GameObject> livesImages = new();
+    
     public int score = 0;
+
+    private PowerupManager _powerupManager;
     
     
     // Start is called before the first frame update
@@ -37,6 +41,7 @@ public class GameManager : MonoBehaviour {
         this.UpdateButtonSelectionState();
         
         this.enteringFence.GetComponent<Animator>().SetBool("isOpen", !this.isGameActive);
+        this._powerupManager = GetComponent<PowerupManager>();
     }
 
     // Update is called once per frame
@@ -54,8 +59,10 @@ public class GameManager : MonoBehaviour {
 
         foreach (GameObject spawningBarrel in spawningBarrels)
         {
-            spawningBarrel.GetComponent<fruitlauncher>().StartLaunching();
+            spawningBarrel.GetComponent<fruitlauncher>().StartLaunching(this.selectedSpeed);
         }
+
+        UpdateLives();
     }
 
     public void CatchFruit(CatchType type)
@@ -63,6 +70,19 @@ public class GameManager : MonoBehaviour {
         if (type == CatchType.NORMAL || type == CatchType.SHINY)
         {
             this.score++;
+        }
+        
+        // If shiny, add powerup
+        if (type == CatchType.SHINY)
+        {
+            this._powerupManager.ReceivePowerup();
+        }
+        
+        // If rotten, remove live and activate bad first queued powerup
+        if (type == CatchType.ROTTEN)
+        {
+            this.lives--;
+            this._powerupManager.UseRottenPowerup();
         }
         
         this.UpdateScoreboard();
@@ -116,5 +136,14 @@ public class GameManager : MonoBehaviour {
     void UpdateScoreboard()
     {
         this.scoreText.text = score.ToString();
+    }
+
+    void UpdateLives()
+    {
+        for (int i = 0; i < livesImages.Count; i++)
+        {
+            if (lives > i) livesImages[i].SetActive(true);
+            else livesImages[i].SetActive(false);
+        }
     }
 }

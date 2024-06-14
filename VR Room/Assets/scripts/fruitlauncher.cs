@@ -19,7 +19,7 @@ public class fruitlauncher : MonoBehaviour
     public float maxUpwardForce = 25f;
     public float shinyFruitProbability = 0.2f; // Probability of launching shiny fruit
 
-    public void StartLaunching()
+    public void StartLaunching(Speed speed)
     {
         StartCoroutine(ContinuousFruitLaunch());
     }

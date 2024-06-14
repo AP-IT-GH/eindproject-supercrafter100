@@ -12,7 +12,19 @@ public class NetBehavior : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Fruit"))
         {
             Destroy(other.gameObject);
-            GameManager.CatchFruit(CatchType.NORMAL);
+
+            if (other.gameObject.tag.Contains("shiny"))
+            {
+                GameManager.CatchFruit(CatchType.SHINY);                
+            }
+            else if (other.gameObject.tag.Contains("rotten")) 
+            {
+                GameManager.CatchFruit(CatchType.ROTTEN);
+            }
+            else
+            { 
+                GameManager.CatchFruit(CatchType.NORMAL);
+            }
         }
     }
 }
