@@ -23,6 +23,22 @@ public class fruitlauncher : MonoBehaviour
 
     public void StartLaunching(Speed speed)
     {
+        switch (speed)
+        {
+            case Speed.SLOW:
+                minLaunchInterval = 2;
+                maxLaunchInterval = 6;
+                break;
+            case Speed.MEDIUM:
+                minLaunchInterval = 1;
+                maxLaunchInterval = 3;
+                break;
+            case Speed.FAST:
+                minLaunchInterval = 0.5f;
+                maxLaunchInterval = 1f;
+                break;
+        }
+        
         isActive = true;
         StartCoroutine(ContinuousFruitLaunch());
     }
