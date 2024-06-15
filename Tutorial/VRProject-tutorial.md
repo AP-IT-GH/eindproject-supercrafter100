@@ -4,11 +4,11 @@ Yenthe Van den Eynden, Stijn Voeten, Tijn Wagemakers, Eline Van Zeir
 
 ## Inleiding
 
-Het spel "The Fruity Collector" neemt spelers mee op een avontuurlijke reis door een weelderige moestuin, waar ze worden uitgedaagd om rondvliegend fruit te vangen terwijl ze slim navigeren tussen vers en rot fruit. Met verschillende moeilijkheidsgraden, variërende snelheden van fruit en fruitvliegen, en een verscheidenheid aan goede en slechte power-ups, belooft dit VR-spel een echte uitdaging te zijn.
+Het spel "The Fruity Collector" neemt spelers mee op een avontuurlijke reis door een virtuele moestijn, waar ze worden uitgedaagd om rondvliegend fruit te vangen terwijl ze moeten bewegen tussen vers en rot fruit. Met verschillende moeilijkheidsgraden, verschillende snelheden van fruitvliegen, en goede en slechte power-ups, is het de bedoeling om zo lang mogelijk te leven en zo veel mogelijk fruit te vangen.
 
-De tutorial gaat stapsgewijs door de opbouw van het project lopen. We gaan samen een unieke VR-game creëren in Unity, waar je niet alleen fruit vangt, maar ook te maken krijgt met intelligente fruitvliegjes die je spelstrategie flink kunnen beïnvloeden.
+De tutorial gaat stapsgewijs door de opbouw van het project lopen. We gaan samen een unieke VR-game creëren in Unity, waar je niet alleen fruit vangt, maar ook te maken krijgt met getrainde fruitvliegjes die je doorheen het spel gaan saboteren.
 
-Deze tutorial loodst je door het proces van het creëren van deze boeiende VR-game met behulp van Unity en Unity ML-Agents. Je leert:
+Deze tutorial leid je door het proces van het creëren van deze VR-game met behulp van Unity en Unity ML-Agents. Je leert:
 
 - Hoe je een VR-omgeving in Unity opzet
 - Hoe je fruit en power-ups in de virtuele boerderij plaatst
