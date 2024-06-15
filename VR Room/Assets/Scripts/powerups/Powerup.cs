@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace powerups
 {
-    public abstract class Powerup
+    public abstract class Powerup: MonoBehaviour
     {
         public abstract Sprite powerupImage { get; set; }
         public abstract void Activate(PowerupManager powerupManager);

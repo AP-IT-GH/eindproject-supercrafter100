@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour {
     public List<GameObject> spawningBarrels = new();
     public AudioSource playerAudioSource;
     public AudioSource fenceAudioSource;
+    public AudioSource introductionNPCSource;
     
     // Settings
     public List<GameObject> difficultyButtons = new();
@@ -61,6 +62,7 @@ public class GameManager : MonoBehaviour {
     {
         this.isGameActive = true;
         this.enteringFence.GetComponent<Animator>().SetBool("isOpen", !this.isGameActive);
+        introductionNPCSource.Stop();
         fenceAudioSource.Play();
         
         this.lives = 3;
