@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour {
     public GameObject enteringFence;
     public TMP_Text scoreText;
     public List<GameObject> spawningBarrels = new();
+    public AudioSource playerAudioSource;
+    public AudioSource fenceAudioSource;
     
     // Settings
     public List<GameObject> difficultyButtons = new();
@@ -27,11 +29,13 @@ public class GameManager : MonoBehaviour {
     // Game values
     public int lives = 3;
     public List<GameObject> livesImages = new();
-    
     public int score = 0;
-
+    
+    // Private class references
     private PowerupManager _powerupManager;
     
+    // Audio clips
+    public AudioClip startGameSound;
     
     // Start is called before the first frame update
     void Start()
@@ -57,12 +61,21 @@ public class GameManager : MonoBehaviour {
         this.lives = 3;
         this.score = 0;
 
+        UpdateLives();
+        PlayPlayerAudio(startGameSound);
+
+        StartCoroutine(DelayedStartLaunch());
+    }
+
+    public IEnumerator DelayedStartLaunch()
+    {
+        // After 2 seconds, start spawning
+        yield return new WaitForSeconds(2);
+        
         foreach (GameObject spawningBarrel in spawningBarrels)
         {
             spawningBarrel.GetComponent<fruitlauncher>().StartLaunching(this.selectedSpeed);
         }
-
-        UpdateLives();
     }
 
     public void EndGame()
@@ -165,5 +178,11 @@ public class GameManager : MonoBehaviour {
             if (lives > i) livesImages[i].SetActive(true);
             else livesImages[i].SetActive(false);
         }
+    }
+
+    void PlayPlayerAudio(AudioClip clip)
+    {
+        playerAudioSource.clip = clip;
+        playerAudioSource.Play();
     }
 }
