@@ -12,6 +12,7 @@ TagManager:
   - shiny_apple
   - shiny_orange
   - Area
+  - rotten
   layers:
   - Default
   - TransparentFX

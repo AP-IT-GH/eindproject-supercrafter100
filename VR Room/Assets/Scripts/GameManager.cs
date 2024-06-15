@@ -36,6 +36,9 @@ public class GameManager : MonoBehaviour {
     
     // Audio clips
     public AudioClip startGameSound;
+    public AudioClip endGameSound;
+    public AudioClip collectFruitSound;
+    public AudioClip badCollectFruitSound;
     
     // Start is called before the first frame update
     void Start()
@@ -58,19 +61,26 @@ public class GameManager : MonoBehaviour {
     {
         this.isGameActive = true;
         this.enteringFence.GetComponent<Animator>().SetBool("isOpen", !this.isGameActive);
+        fenceAudioSource.Play();
+        
         this.lives = 3;
         this.score = 0;
 
         UpdateLives();
-        PlayPlayerAudio(startGameSound);
-
-        StartCoroutine(DelayedStartLaunch());
+        UpdateScoreboard();
+        StartCoroutine(StartUpSequence());
     }
 
-    public IEnumerator DelayedStartLaunch()
+    public IEnumerator StartUpSequence()
     {
-        // After 2 seconds, start spawning
-        yield return new WaitForSeconds(2);
+        // Fence closing takes a second, so wait one second before playing the start audio sound
+        yield return new WaitForSeconds(1);
+        
+        // Play gong that represents game start
+        PlayPlayerAudio(startGameSound);
+        
+        // After 4 seconds, start spawning
+        yield return new WaitForSeconds(4);
         
         foreach (GameObject spawningBarrel in spawningBarrels)
         {
@@ -82,13 +92,26 @@ public class GameManager : MonoBehaviour {
     {
         // End game
         this.isGameActive = false;
-        this.enteringFence.GetComponent<Animator>().SetBool("isOpen", !this.isGameActive);
-        
+
         // Stop all barrels from spawning objects
         foreach (GameObject spawningBarrel in spawningBarrels)
         {
             spawningBarrel.GetComponent<fruitlauncher>().StopLaunching();
         }
+
+        StartCoroutine(EndSequence());
+    }
+
+    private IEnumerator EndSequence()
+    {
+        // End woosh
+        PlayPlayerAudio(endGameSound);
+        
+        // After 3 seconds, open gate
+        yield return new WaitForSeconds(3);
+        
+        fenceAudioSource.Play();
+        this.enteringFence.GetComponent<Animator>().SetBool("isOpen", !this.isGameActive);
     }
 
     public void CatchFruit(CatchType type)
@@ -96,6 +119,7 @@ public class GameManager : MonoBehaviour {
         if (type == CatchType.NORMAL || type == CatchType.SHINY)
         {
             this.score++;
+            PlayPlayerAudio(this.collectFruitSound);
         }
         
         // If shiny, add powerup
@@ -108,6 +132,7 @@ public class GameManager : MonoBehaviour {
         if (type == CatchType.ROTTEN)
         {
             this.lives--;
+            PlayPlayerAudio(badCollectFruitSound);
             
             // Make sure there are enough lives
             // and end the game if ther aren't 
@@ -119,6 +144,7 @@ public class GameManager : MonoBehaviour {
         }
         
         this.UpdateScoreboard();
+        this.UpdateLives();
     }
 
     public void UpdateDifficulty(String inputDifficulty)
@@ -171,16 +197,15 @@ public class GameManager : MonoBehaviour {
         this.scoreText.text = score.ToString();
     }
 
-    void UpdateLives()
+    public void UpdateLives()
     {
         for (int i = 0; i < livesImages.Count; i++)
         {
-            if (lives > i) livesImages[i].SetActive(true);
-            else livesImages[i].SetActive(false);
+            livesImages[i].SetActive(lives > i);
         }
     }
 
-    void PlayPlayerAudio(AudioClip clip)
+    public void PlayPlayerAudio(AudioClip clip)
     {
         playerAudioSource.clip = clip;
         playerAudioSource.Play();

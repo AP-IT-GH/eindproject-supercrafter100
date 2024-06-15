@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class fruitlauncher : MonoBehaviour
 {
+    private bool isActive = false;
+    
     public GameObject[] fruitPrefabs;
     public GameObject[] shinyFruit;
     public Transform launchPoint;
@@ -21,17 +23,18 @@ public class fruitlauncher : MonoBehaviour
 
     public void StartLaunching(Speed speed)
     {
+        isActive = true;
         StartCoroutine(ContinuousFruitLaunch());
     }
 
     public void StopLaunching()
     {
-        StopCoroutine(ContinuousFruitLaunch());
+        isActive = false;
     }
 
     IEnumerator ContinuousFruitLaunch()
     {
-        while (true)
+        while (isActive)
         {
             yield return new WaitForSeconds(UnityEngine.Random.Range(minLaunchInterval, maxLaunchInterval));
             LaunchFruit();
