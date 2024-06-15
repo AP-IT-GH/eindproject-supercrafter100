@@ -65,6 +65,19 @@ public class GameManager : MonoBehaviour {
         UpdateLives();
     }
 
+    public void EndGame()
+    {
+        // End game
+        this.isGameActive = false;
+        this.enteringFence.GetComponent<Animator>().SetBool("isOpen", !this.isGameActive);
+        
+        // Stop all barrels from spawning objects
+        foreach (GameObject spawningBarrel in spawningBarrels)
+        {
+            spawningBarrel.GetComponent<fruitlauncher>().StopLaunching();
+        }
+    }
+
     public void CatchFruit(CatchType type)
     {
         if (type == CatchType.NORMAL || type == CatchType.SHINY)
@@ -82,6 +95,13 @@ public class GameManager : MonoBehaviour {
         if (type == CatchType.ROTTEN)
         {
             this.lives--;
+            
+            // Make sure there are enough lives
+            // and end the game if ther aren't 
+            if (this.lives <= 0)
+            {
+                this.EndGame();
+            }
             this._powerupManager.UseRottenPowerup();
         }
         
