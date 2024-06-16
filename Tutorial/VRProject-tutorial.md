@@ -45,15 +45,15 @@ Voor inverse kinematics en karakter rigging maken we gebruik van Animation Riggi
 
 ### Objecten 
 #### Statische objecten
-- Voor de omgeving is er gebruik gemaakt van een package van de Unity asset store (https://assetstore.unity.com/packages/3d/environments/fantasy/dreamscape-nature-meadows-stylized-open-world-environment-186894). Hiermee kan je zelf de omgeving naar eigen zin opbouwen.
+- Voor de omgeving is er gebruik gemaakt van een [package](https://assetstore.unity.com/packages/3d/environments/fantasy/dreamscape-nature-meadows-stylized-open-world-environment-186894) van de Unity asset store. Hiermee kan je zelf de omgeving naar eigen zin opbouwen.
 - In de omgeving zie je 2 houten borden. Op eentje kan je de instellingen aanpassen en op de andere kan je de score bekijken. 
 - Het vangnet voor het fruit is gemaakt in blender. Deze heb je vast in je erchterhand. Op je linkerhand zie je een display waar je het aantal levens en powerups kan zien. 
 
 #### Dynamische objecten
-- Vliegend fruit: Hiervoor hebben we een fruit package van de Unity asset store gebruikt (https://assetstore.unity.com/packages/3d/props/fruits-lowpoly-pack-lite-273980). Dit fruit wordt uit een ton geschoten en als het de grond raakt dan verwijnt het fruit.
+- Vliegend fruit: Hiervoor hebben we een fruit [package](https://assetstore.unity.com/packages/3d/props/fruits-lowpoly-pack-lite-273980) van de Unity asset store gebruikt . Dit fruit wordt uit een ton geschoten en als het de grond raakt dan verwijnt het fruit.
 - Poort: Dit hek is hetzelfde hek dat we gebruiken bij de statische objecten. Hier is een animatie opgezet zodat deze open en toe kan gaan.
-- Fruitvliegen: Hiervoor hebben we een dragonfly package van de Unity asset store gebruikt (https://assetstore.unity.com/packages/3d/characters/animals/insects/dragonfly-arrow-cute-series-215297). Hier hadden de vliegen al animaties.
-- Introductie karakter: Voor de uitleg over het spel te geven hebben we gebruik gemaakt van een human karakter (https://assetstore.unity.com/packages/3d/characters/humanoids/fantasy/free-low-poly-human-rpg-character-219979). Deze is met behulp van inverse kinematics, recorder en de vr headset geanimeerd. 
+- Fruitvliegen: Hiervoor hebben we een dragonfly [package](https://assetstore.unity.com/packages/3d/characters/animals/insects/dragonfly-arrow-cute-series-215297) van de Unity asset store gebruikt. Hier hadden de vliegen al animaties.
+- Introductie karakter: Voor de uitleg over het spel te geven hebben we gebruik gemaakt van een [human karakter](https://assetstore.unity.com/packages/3d/characters/humanoids/fantasy/free-low-poly-human-rpg-character-219979). Deze is met behulp van inverse kinematics, recorder en de vr headset geanimeerd. 
 
 
 ## Trainingen
