@@ -92,11 +92,30 @@ In deze training zijn we begonnen met een simpel scenario. De vlieg moest op een
 
 <img src="https://github.com/AP-IT-GH/eindproject-supercrafter100/assets/56113284/1c0112f6-520c-4396-88a8-7814ea5d18ff" alt="description" width="400"/> 
 
+#### Training 2: De vlieg laten zoeken in een 3D ruimte naar een statisch object
+In deze training hebben we de vlieg in een 3d ruimte (afgebakend met muren), laten zoeken naar een object. De agent kreeg een negatieve reward bij elke stap die deed, een kleine reward als die dichter bij het object kwam en een grote reward als de kubus geraakt werd. 
+
+<img src="https://github.com/AP-IT-GH/eindproject-supercrafter100/assets/56113284/027e7628-0e1e-4e7c-8643-eb83b8235349" alt="description" width="400"/> 
+
+<img src="https://github.com/AP-IT-GH/eindproject-supercrafter100/assets/56113284/c4313ca5-30a6-4ce8-8505-2f8b27b31724" alt="description" width="400"/> 
+
+<img src="https://github.com/AP-IT-GH/eindproject-supercrafter100/assets/56113284/410d9023-a49a-46c0-98d9-330ab0383bab" alt="description" width="400"/>
+
+<img src="https://github.com/AP-IT-GH/eindproject-supercrafter100/assets/56113284/2afad80c-efbe-459e-9e12-18e0e525564e" alt="description" width="400"/>
+
 
 ### Resultaten
 #### Training 1
 De Vlieg was snel getraind. 
 ![image](https://github.com/AP-IT-GH/eindproject-supercrafter100/assets/56113284/6898e7f8-616c-4971-b8fd-2d2f26e75391)
+
+Uiteindelijk hebben we deze training niet echt kunnen gebruiken aangezien wij de vlieg ook in de y-richting (dus naar boven en onder) willen laten vliegen. 
+
+#### Training 2
+Deze training is niet vlot verlopen. Er waren teveel parameters waar rekening mee moest worden gehouden en het was een moeilijke rewardfunctie. Het was lastig om te bepalen op welke manier je rewards moest geven aan je agent. Na een dik uur hebben we onderstaande resultaten. Aangezien we geen vooruitgang hebben geboekt, hebben we deze training dan ook maar stopgezet. 
+
+![Schermafbeelding 2024-06-15 201446](https://github.com/AP-IT-GH/eindproject-supercrafter100/assets/56113284/103addc0-d964-4332-b490-30d63219fe4f)
+
 
 ## Conclusie
 
