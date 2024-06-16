@@ -20,7 +20,7 @@ public class NetBehavior : MonoBehaviour
             }
             else if (other.gameObject.tag.Contains("rotten")) 
             {
-                GameManager.CatchFruit(CatchType.ROTTEN);
+                GameManager.CatchFruit(CatchType.ROTTEN, other.gameObject.tag.Contains("shiny"));
             }
             else
             { 

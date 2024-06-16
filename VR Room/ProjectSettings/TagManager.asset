@@ -13,6 +13,9 @@ TagManager:
   - shiny_orange
   - Area
   - rotten
+  - shiny
+  - rottenshiny
+  - fly
   layers:
   - Default
   - TransparentFX

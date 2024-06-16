@@ -7,17 +7,12 @@ namespace powerups
     {
         public override Sprite powerupImage { get; set; }
 
-        public BiggerNetPowerup(Sprite powerupImage)
-        {
-            this.powerupImage = powerupImage;
-        }
-
         public override void Activate(PowerupManager powerupManager)
         {
             StartCoroutine(ActivateTiming(powerupManager));
         }
 
-        public IEnumerator ActivateTiming(PowerupManager manager)
+        private IEnumerator ActivateTiming(PowerupManager manager)
         {
             SizeDouble(manager.netObject);
             yield return new WaitForSeconds(10);
@@ -29,7 +24,7 @@ namespace powerups
             StartCoroutine(ActivateRottenTiming(powerupManager));
         }
         
-        public IEnumerator ActivateRottenTiming(PowerupManager manager)
+        private IEnumerator ActivateRottenTiming(PowerupManager manager)
         {
             SizeHalf(manager.netObject);
             yield return new WaitForSeconds(10);

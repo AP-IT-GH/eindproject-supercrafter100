@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour {
     public AudioSource playerAudioSource;
     public AudioSource fenceAudioSource;
     public AudioSource introductionNPCSource;
+    public GameObject flyPrefab;
+    public Vector3 flySpawnPosition;
     
     // Settings
     public List<GameObject> difficultyButtons = new();
@@ -84,6 +86,26 @@ public class GameManager : MonoBehaviour {
         // After 4 seconds, start spawning
         yield return new WaitForSeconds(4);
         
+        // Spawn flies
+        int flySpawnCount = 2;
+        switch (selectedDifficulty)
+        {
+            case Difficulty.EASY:
+                flySpawnCount = 2;
+                break;
+            case Difficulty.MEDIUM:
+                flySpawnCount = 4;
+                break;
+            case Difficulty.HARD:
+                flySpawnCount = 8;
+                break;
+        }
+        
+        for (int i = 0; i < flySpawnCount; i++)
+        {
+            Instantiate(flyPrefab, flySpawnPosition, Quaternion.identity);
+        }
+        
         foreach (GameObject spawningBarrel in spawningBarrels)
         {
             spawningBarrel.GetComponent<fruitlauncher>().StartLaunching(this.selectedSpeed);
@@ -99,6 +121,11 @@ public class GameManager : MonoBehaviour {
         foreach (GameObject spawningBarrel in spawningBarrels)
         {
             spawningBarrel.GetComponent<fruitlauncher>().StopLaunching();
+        }
+        
+        foreach (GameObject fly in GameObject.FindGameObjectsWithTag("fly"))
+        {
+            Destroy(fly);
         }
 
         StartCoroutine(EndSequence());
@@ -116,7 +143,7 @@ public class GameManager : MonoBehaviour {
         this.enteringFence.GetComponent<Animator>().SetBool("isOpen", !this.isGameActive);
     }
 
-    public void CatchFruit(CatchType type)
+    public void CatchFruit(CatchType type, bool isShiny = false)
     {
         if (type == CatchType.NORMAL || type == CatchType.SHINY)
         {
@@ -142,7 +169,11 @@ public class GameManager : MonoBehaviour {
             {
                 this.EndGame();
             }
-            this._powerupManager.UseRottenPowerup();
+
+            if (isShiny)
+            {
+                this._powerupManager.UseRottenPowerup();
+            }
         }
         
         this.UpdateScoreboard();

@@ -22,8 +22,14 @@ public class PowerupManager : MonoBehaviour
 
     private void Start()
     {
-        this.powerups.Add(new BiggerNetPowerup(biggerNetPowerupSprite));
-        this.powerups.Add(new ExtraLifePowerup(extraHeartPowerupSprite));
+        Powerup pw1 = gameObject.AddComponent<BiggerNetPowerup>();
+        pw1.powerupImage = biggerNetPowerupSprite;
+        
+        Powerup pw2 = gameObject.AddComponent<ExtraLifePowerup>();
+        pw2.powerupImage = extraHeartPowerupSprite;
+        
+        this.powerups.Add(pw1);
+        this.powerups.Add(pw2);
         UpdateImageSlots();
     }
 
