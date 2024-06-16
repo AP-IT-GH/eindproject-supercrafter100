@@ -26,7 +26,7 @@ public class testAgent : Agent
     public override void CollectObservations(VectorSensor sensor)
     {
         // Target en Agent posities
-        sensor.AddObservation(Target.localPosition);
+        
         sensor.AddObservation(this.transform.localPosition);
 
     }
@@ -55,6 +55,8 @@ public class testAgent : Agent
         {
             EndEpisode();
         }
+
+        AddReward(-1f / MaxStep);
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)

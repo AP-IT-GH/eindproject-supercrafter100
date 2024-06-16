@@ -12,6 +12,7 @@ TagManager:
   - shiny_apple
   - shiny_orange
   - Area
+  - target
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - wall
   - Fruit Boundary
   - Fruit
   - 
