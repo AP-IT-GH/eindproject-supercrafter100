@@ -148,3 +148,20 @@ De resultaten van de trainingssessies toonden aan dat de vlieg succesvol getrain
 
 Naar de toekomst toe is het misschien een verbeterpunt om een efficiëntere manier te vinden om de agents te trainen binnen een 3D ruimte. Bovendien is het proper houden van de projectstructuur een aanrader. Dit zorgt ervoor dat het voor heel de groep makkelijker is om alles terug te vinden.  
 
+## Bronnen 
+- NEOFDev, Unity Tutorials, Game Dev Vlog. (2021, February 21). Inverse Kinematics Unity Tutorial in 3 minutes [Video]. YouTube. https://www.youtube.com/watch?v=TUBHvQ2XEJs
+- Crooks Peak. (2021, November 30). Mocap animation using Unity and VR gear [Video]. YouTube. https://www.youtube.com/watch?v=6lBkgr-asLs
+- About Unity Recorder | Unity Recorder | 2.5.7. (n.d.). https://docs.unity3d.com/Packages/com.unity.recorder@2.5/manual/index.html
+- Animation Rigging | Animation Rigging | 1.0.3. (n.d.). https://docs.unity3d.com/Packages/com.unity.animation.rigging@1.0/manual/index.html
+- Valem Tutorials. (2023, May 28). Complete VR Body Setup - Arms and Legs IK with Hand Animation [Video]. YouTube. https://www.youtube.com/watch?v=v47lmqfrQ9s
+- Pixabay. (n.d.). 90,000+ free sound effects for download - Pixabay - Pixabay. https://pixabay.com/sound-effects/
+- FREE Low Poly Human - RPG Character | Characters | Unity Asset Store. (2024, March 1). Unity Asset Store. https://assetstore.unity.com/packages/3d/characters/humanoids/fantasy/free-low-poly-human-rpg-character-219979
+- How to execute code after X seconds - Questions & Answers - Unity Discussions. (2016, July 5). Unity Discussions. https://discussions.unity.com/t/how-to-execute-code-after-x-seconds/168749
+- ShayekhBinIslam/hummingbird-mlagent: A Simple Game Using Unity ML-Agents. (n.d.). GitHub. https://github.com/ShayekhBinIslam/hummingbird-mlagent
+- Valem Tutorials. (2023, May 28). Complete VR Body Setup - Arms and Legs IK with Hand Animation [Video]. YouTube. https://www.youtube.com/watch?v=v47lmqfrQ9s
+- Dreamscape Nature : Meadows : Stylized Open world environment | 3D Fantasy | Unity Asset Store. (2023, May 6). Unity Asset Store. https://assetstore.unity.com/packages/3d/environments/fantasy/dreamscape-nature-meadows-stylized-open-world-environment-186894
+- Fruits LowPoly Pack Lite | 3D Props | Unity Asset Store. (n.d.). Unity Asset Store. https://assetstore.unity.com/packages/3d/props/fruits-lowpoly-pack-lite-273980
+- Dragonfly Arrow Cute Series | Characters | Unity Asset Store. (2024, May 22). Unity Asset Store. https://assetstore.unity.com/packages/3d/characters/animals/insects/dragonfly-arrow-cute-series-215297
+  
+
+
