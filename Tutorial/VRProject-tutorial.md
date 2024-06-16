@@ -142,7 +142,9 @@ Deze training is niet vlot verlopen. Het is moeilijk om een reward manier te vin
 
 
 ## Conclusie
+We hebben een VR-game genaamd "The Fruity Collector" gecreëerd in Unity, waarbij spelers fruit vangen tussen getrainde fruitvliegen, met verschillende moeilijkheidsgraden en power-ups, ondersteund door Unity ML-Agents en diverse Unity Asset Store pakketten.
 
+De resultaten van de trainingssessies toonden aan dat de vlieg succesvol getraind kon worden om in een vlak naar een statisch object te bewegen en binnen een afgebakend gebied met muren te navigeren. Dit resulteerde in een goede game waar de vliegen ook naar bewegende objecten kunnen vliegen. De pogingen om de vlieg in een 3D-ruimte te trainen waren echter minder succesvol, vanwege de complexiteit van de beloningsstructuur en de extra bewegingsvrijheid in drie dimensies. Bij de laatste trainingen was het duidelijk dat we de moeilijkheidgraad een klein beetje hadden onderschat. 
 
-
+Naar de toekomst toe is het misschien een verbeterpunt om een efficiëntere manier te vinden om de agents te trainen binnen een 3D ruimte. Bovendien is het proper houden van de projectstructuur een aanrader. Dit zorgt ervoor dat het voor heel de groep makkelijker is om alles terug te vinden.  
 
