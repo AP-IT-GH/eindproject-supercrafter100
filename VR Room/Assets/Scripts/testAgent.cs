@@ -20,12 +20,13 @@ public class testAgent : Agent
             this.transform.localPosition = new Vector3(0, 0.5f, 0); this.transform.localRotation = Quaternion.identity;
         }
 
-        // verplaats de target naar een nieuwe willekeurige locatie 
-        Target.localPosition = new Vector3(Random.value * 8 - 4, 0.5f, Random.value * 8 - 4);
+        // verplaats de target naar een nieuwe willekeurige locatie 
+        Target.localPosition = new Vector3(Random.value * 8 - 4, 0.5f, Random.value * 8 - 4);
+        Target.localRotation = new Quaternion(0, Random.value * 360f, 0, 1);
     }
     public override void CollectObservations(VectorSensor sensor)
     {
-        // Target en Agent posities
+        // Target enï¿½Agent posities
         sensor.AddObservation(Target.localPosition);
         sensor.AddObservation(this.transform.localPosition);
 
@@ -50,7 +51,7 @@ public class testAgent : Agent
             EndEpisode();
         }
 
-        // Van het platform gevallen?
+        // Van hetï¿½platform gevallen?
         else if (this.transform.localPosition.y < 0)
         {
             EndEpisode();
