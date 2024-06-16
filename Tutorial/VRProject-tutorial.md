@@ -106,7 +106,9 @@ In deze training hebben we de vlieg in een 3d ruimte (afgebakend met muren), lat
 
 #### Training 3: De vlieg laten zoeken in een 3D ruimte met rays naar een statisch object
 In deze training hebben we de vlieg rays gegeven. De vlieg en het target object zitten in een afgebakende ruimte. Het object kon overal spawnen in de ruimte. De vlieg kreeg een negatieve reward bij het raken van de muren, dak en de grond en bij elke stap dat hij deed. Als hij dicht bij het object kwam kreeg hij een positieve award.
-
+![Schermafbeelding 2024-06-16 125502](https://github.com/AP-IT-GH/eindproject-supercrafter100/assets/83341026/171d5c7f-3909-4b5b-9592-7625fa44fd45)
+![Schermafbeelding 2024-06-16 125438](https://github.com/AP-IT-GH/eindproject-supercrafter100/assets/83341026/e64f77b2-fda4-4ce9-9f20-c8a1f7c98c54)
+![Schermafbeelding 2024-06-16 125418](https://github.com/AP-IT-GH/eindproject-supercrafter100/assets/83341026/b3161598-5ebc-40e9-aea8-b10066119b8a)
 
 ### Resultaten
 #### Training 1
@@ -124,6 +126,7 @@ Deze training is niet vlot verlopen. Er waren teveel parameters waar rekening me
 ### Training 3
 Deze training is niet vlot verlopen. Het is moeilijk om een reward manier te vinden omdat de agent ook omhoog en omlaag moet kunnen gaan. Na een lange training zie je dat er geen voruitgang is geboekt in de training. Hierdoor hebben we het maar gestopt en een andere training begonnen.
 
+![Schermafbeelding 2024-06-16 124736](https://github.com/AP-IT-GH/eindproject-supercrafter100/assets/83341026/ece2d964-af85-4ec8-8afa-4f72b9dc6428)
 
 
 
