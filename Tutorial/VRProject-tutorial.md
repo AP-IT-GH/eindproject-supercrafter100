@@ -93,7 +93,7 @@ In deze training zijn we begonnen met een simpel scenario. De vlieg moest op een
 <img src="https://github.com/AP-IT-GH/eindproject-supercrafter100/assets/56113284/1c0112f6-520c-4396-88a8-7814ea5d18ff" alt="description" width="400"/> 
 
 #### Training 2: de vlieg in een vlak laten zoeken met muren naar een statisch object
-Hier hebben we de agent laten trainen met 2 rays. Een deel van de rays ging op zoek naar het statusche object. De andere rays detecteerde de muren. Zo konden we deze agent gebruiken om te vliegen binnen de hekken (het speelveld). 
+Hier hebben we de agent laten trainen met 2 rays. Een deel van de rays ging op zoek naar het statische object. De andere rays detecteerde de muren. Zo konden we deze agent gebruiken om te vliegen binnen de hekken (het speelveld). 
 ![image](https://github.com/AP-IT-GH/eindproject-supercrafter100/assets/56113284/27f16838-d7b3-433b-b1e3-caa67c43d25c)
 
 
