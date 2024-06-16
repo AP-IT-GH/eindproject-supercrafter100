@@ -99,3 +99,6 @@ De Vlieg was snel getraind.
 ![image](https://github.com/AP-IT-GH/eindproject-supercrafter100/assets/56113284/6898e7f8-616c-4971-b8fd-2d2f26e75391)
 
 ## Conclusie
+
+
+#### Training : De vlieg rays geven en zo laten zoeken naar een statisch object
