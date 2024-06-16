@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour {
     public GameObject enteringFence;
     public TMP_Text scoreText;
     public List<GameObject> spawningBarrels = new();
+    public AudioSource playerAudioSource;
+    public AudioSource fenceAudioSource;
+    public AudioSource introductionNPCSource;
     
     // Settings
     public List<GameObject> difficultyButtons = new();
@@ -27,11 +30,16 @@ public class GameManager : MonoBehaviour {
     // Game values
     public int lives = 3;
     public List<GameObject> livesImages = new();
-    
     public int score = 0;
-
+    
+    // Private class references
     private PowerupManager _powerupManager;
     
+    // Audio clips
+    public AudioClip startGameSound;
+    public AudioClip endGameSound;
+    public AudioClip collectFruitSound;
+    public AudioClip badCollectFruitSound;
     
     // Start is called before the first frame update
     void Start()
@@ -54,15 +62,58 @@ public class GameManager : MonoBehaviour {
     {
         this.isGameActive = true;
         this.enteringFence.GetComponent<Animator>().SetBool("isOpen", !this.isGameActive);
+        introductionNPCSource.Stop();
+        fenceAudioSource.Play();
+        
         this.lives = 3;
         this.score = 0;
 
+        UpdateLives();
+        UpdateScoreboard();
+        StartCoroutine(StartUpSequence());
+    }
+
+    public IEnumerator StartUpSequence()
+    {
+        // Fence closing takes a second, so wait one second before playing the start audio sound
+        yield return new WaitForSeconds(1);
+        
+        // Play gong that represents game start
+        PlayPlayerAudio(startGameSound);
+        
+        // After 4 seconds, start spawning
+        yield return new WaitForSeconds(4);
+        
         foreach (GameObject spawningBarrel in spawningBarrels)
         {
             spawningBarrel.GetComponent<fruitlauncher>().StartLaunching(this.selectedSpeed);
         }
+    }
 
-        UpdateLives();
+    public void EndGame()
+    {
+        // End game
+        this.isGameActive = false;
+
+        // Stop all barrels from spawning objects
+        foreach (GameObject spawningBarrel in spawningBarrels)
+        {
+            spawningBarrel.GetComponent<fruitlauncher>().StopLaunching();
+        }
+
+        StartCoroutine(EndSequence());
+    }
+
+    private IEnumerator EndSequence()
+    {
+        // End woosh
+        PlayPlayerAudio(endGameSound);
+        
+        // After 3 seconds, open gate
+        yield return new WaitForSeconds(3);
+        
+        fenceAudioSource.Play();
+        this.enteringFence.GetComponent<Animator>().SetBool("isOpen", !this.isGameActive);
     }
 
     public void CatchFruit(CatchType type)
@@ -70,6 +121,7 @@ public class GameManager : MonoBehaviour {
         if (type == CatchType.NORMAL || type == CatchType.SHINY)
         {
             this.score++;
+            PlayPlayerAudio(this.collectFruitSound);
         }
         
         // If shiny, add powerup
@@ -82,10 +134,19 @@ public class GameManager : MonoBehaviour {
         if (type == CatchType.ROTTEN)
         {
             this.lives--;
+            PlayPlayerAudio(badCollectFruitSound);
+            
+            // Make sure there are enough lives
+            // and end the game if ther aren't 
+            if (this.lives <= 0)
+            {
+                this.EndGame();
+            }
             this._powerupManager.UseRottenPowerup();
         }
         
         this.UpdateScoreboard();
+        this.UpdateLives();
     }
 
     public void UpdateDifficulty(String inputDifficulty)
@@ -138,12 +199,17 @@ public class GameManager : MonoBehaviour {
         this.scoreText.text = score.ToString();
     }
 
-    void UpdateLives()
+    public void UpdateLives()
     {
         for (int i = 0; i < livesImages.Count; i++)
         {
-            if (lives > i) livesImages[i].SetActive(true);
-            else livesImages[i].SetActive(false);
+            livesImages[i].SetActive(lives > i);
         }
+    }
+
+    public void PlayPlayerAudio(AudioClip clip)
+    {
+        playerAudioSource.clip = clip;
+        playerAudioSource.Play();
     }
 }

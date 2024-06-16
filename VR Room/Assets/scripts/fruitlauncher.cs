@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class fruitlauncher : MonoBehaviour
 {
+    private bool isActive = false;
+    
     public GameObject[] fruitPrefabs;
     public GameObject[] shinyFruit;
     public Transform launchPoint;
@@ -21,17 +23,34 @@ public class fruitlauncher : MonoBehaviour
 
     public void StartLaunching(Speed speed)
     {
+        switch (speed)
+        {
+            case Speed.SLOW:
+                minLaunchInterval = 2;
+                maxLaunchInterval = 6;
+                break;
+            case Speed.MEDIUM:
+                minLaunchInterval = 1;
+                maxLaunchInterval = 3;
+                break;
+            case Speed.FAST:
+                minLaunchInterval = 0.5f;
+                maxLaunchInterval = 1f;
+                break;
+        }
+        
+        isActive = true;
         StartCoroutine(ContinuousFruitLaunch());
     }
 
     public void StopLaunching()
     {
-        StopCoroutine(ContinuousFruitLaunch());
+        isActive = false;
     }
 
     IEnumerator ContinuousFruitLaunch()
     {
-        while (true)
+        while (isActive)
         {
             yield return new WaitForSeconds(UnityEngine.Random.Range(minLaunchInterval, maxLaunchInterval));
             LaunchFruit();
@@ -54,6 +73,7 @@ public class fruitlauncher : MonoBehaviour
 
         GameObject fruitInstance = Instantiate(fruitPrefab, launchPoint.position, Quaternion.identity);
         fruitInstance.layer = LayerMask.NameToLayer("Fruit"); // Set layer for 
+        GetComponent<AudioSource>().Play(); // play plop sound
         
         float launchAngle = UnityEngine.Random.Range(minLaunchAngle, maxLaunchAngle);
         float upwardForce = UnityEngine.Random.Range(minUpwardForce, maxUpwardForce);

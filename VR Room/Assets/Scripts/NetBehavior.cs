@@ -12,6 +12,7 @@ public class NetBehavior : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Fruit"))
         {
             Destroy(other.gameObject);
+            if (!GameManager.isGameActive) return;
 
             if (other.gameObject.tag.Contains("shiny"))
             {
