@@ -92,7 +92,12 @@ In deze training zijn we begonnen met een simpel scenario. De vlieg moest op een
 
 <img src="https://github.com/AP-IT-GH/eindproject-supercrafter100/assets/56113284/1c0112f6-520c-4396-88a8-7814ea5d18ff" alt="description" width="400"/> 
 
-#### Training 2: De vlieg laten zoeken in een 3D ruimte naar een statisch object
+#### Training 2: de vlieg in een vlak laten zoeken met muren naar een statisch object
+Hier hebben we de agent laten trainen met 2 rays. Een deel van de rays ging op zoek naar het statusche object. De andere rays detecteerde de muren. Zo konden we deze agent gebruiken om te vliegen binnen de hekken (het speelveld). 
+![image](https://github.com/AP-IT-GH/eindproject-supercrafter100/assets/56113284/27f16838-d7b3-433b-b1e3-caa67c43d25c)
+
+
+#### Training 3: De vlieg laten zoeken in een 3D ruimte naar een statisch object
 In deze training hebben we de vlieg in een 3d ruimte (afgebakend met muren), laten zoeken naar een object. De agent kreeg een negatieve reward bij elke stap die deed, een kleine reward als die dichter bij het object kwam en een grote reward als de kubus geraakt werd. 
 
 <img src="https://github.com/AP-IT-GH/eindproject-supercrafter100/assets/56113284/027e7628-0e1e-4e7c-8643-eb83b8235349" alt="description" width="400"/> 
@@ -104,7 +109,7 @@ In deze training hebben we de vlieg in een 3d ruimte (afgebakend met muren), lat
 <img src="https://github.com/AP-IT-GH/eindproject-supercrafter100/assets/56113284/2afad80c-efbe-459e-9e12-18e0e525564e" alt="description" width="400"/>
 
 
-#### Training 3: De vlieg laten zoeken in een 3D ruimte met rays naar een statisch object
+#### Training 4: De vlieg laten zoeken in een 3D ruimte met rays naar een statisch object
 In deze training hebben we de vlieg rays gegeven. De vlieg en het target object zitten in een afgebakende ruimte. Het object kon overal spawnen in de ruimte. De vlieg kreeg een negatieve reward bij het raken van de muren, dak en de grond en bij elke stap dat hij deed. Als hij dicht bij het object kwam kreeg hij een positieve award.
 
 <img src="https://github.com/AP-IT-GH/eindproject-supercrafter100/assets/83341026/171d5c7f-3909-4b5b-9592-7625fa44fd45" alt="description" width="400"/> 
@@ -117,22 +122,23 @@ In deze training hebben we de vlieg rays gegeven. De vlieg en het target object 
 De Vlieg was snel getraind. 
 ![image](https://github.com/AP-IT-GH/eindproject-supercrafter100/assets/56113284/6898e7f8-616c-4971-b8fd-2d2f26e75391)
 
-Uiteindelijk hebben we deze training niet echt kunnen gebruiken aangezien wij de vlieg ook in de y-richting (dus naar boven en onder) willen laten vliegen. 
+Uiteindelijk hebben we deze training niet echt kunnen gebruiken aangezien wij de vliegen alleen willen laten vliegen binnen het spelveld (binnen de hekken) en deze agent niet getraind is om binnen een bepaald veld te vliegen.
 
 #### Training 2
+Deze training is redelijk snel gelukt. 
+![image](https://github.com/AP-IT-GH/eindproject-supercrafter100/assets/56113284/900a113f-a731-4918-b70c-009d48abe890)
+
+
+#### Training 3
 Deze training is niet vlot verlopen. Er waren teveel parameters waar rekening mee moest worden gehouden en het was een moeilijke rewardfunctie. Het was lastig om te bepalen op welke manier je rewards moest geven aan je agent. Na een dik uur hebben we onderstaande resultaten. Aangezien we geen vooruitgang hebben geboekt, hebben we deze training dan ook maar stopgezet. 
 
 ![Schermafbeelding 2024-06-15 201446](https://github.com/AP-IT-GH/eindproject-supercrafter100/assets/56113284/103addc0-d964-4332-b490-30d63219fe4f)
 
 
-### Training 3
+### Training 4
 Deze training is niet vlot verlopen. Het is moeilijk om een reward manier te vinden omdat de agent ook omhoog en omlaag moet kunnen gaan. Na een lange training zie je dat er geen voruitgang is geboekt in de training. Hierdoor hebben we het maar gestopt en een andere training begonnen.
 
 ![Schermafbeelding 2024-06-16 124736](https://github.com/AP-IT-GH/eindproject-supercrafter100/assets/83341026/ece2d964-af85-4ec8-8afa-4f72b9dc6428)
-
-
-
-
 
 
 ## Conclusie
